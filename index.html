@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beautiful and Simple Website</title>
+
+  <!-- Google Fonts (optional) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="index.html" aria-label="Go to home">LOGO</a>
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" role="banner">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+      <h1 class="title">Beautiful and Simple Web Page</h1>
+      <p class="subtitle">Using clean HTML & CSS (no deprecated tags)</p>
+      <div class="cta-group">
+        <a class="btn btn-primary" href="#get-started">Get Started</a>
+        <a class="btn btn-outline" href="#subscribe">Subscribe</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Placeholder sections for your anchors -->
+  <main>
+    <section id="portfolio" class="section container">
+      <h2>Portfolio</h2>
+      <p>Showcase your latest work here.</p>
+    </section>
+
+    <section id="blog" class="section container">
+      <h2>Blog</h2>
+      <p>Share updates and insights with your audience.</p>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Contact Us</h2>
+      <p>Email: melusi@example.com</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Your Brand. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle (no external JS)
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.main-nav ul');
+
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      nav.classList.toggle('open');
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
